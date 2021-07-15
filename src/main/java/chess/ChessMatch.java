@@ -31,6 +31,7 @@ public class ChessMatch {
 		Position target = targetposition.toPosition();
 		
 		validateSourcePosition(source);
+		validateTargetPosition(source,target);
 		Piece capturedPiece = makeMove(source, target);
 		
 		return (ChessPiece) capturedPiece;
@@ -53,6 +54,11 @@ public class ChessMatch {
 		}
 	}
 	
+	private void validateTargetPosition(Position source, Position target) {
+		if (!board.getPiece(source).possivleMove(target)) {
+			throw new ChessException("A peca escolhida nao pode ser movida para a posicao de destino");
+		}
+	}
 	
 	private void placeNewPiece(char column, int row, ChessPiece piece) {
 		board.placePiece(piece, new ChessPosition(column, row).toPosition());

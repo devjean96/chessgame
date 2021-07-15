@@ -10,5 +10,10 @@ public class Position {
 	private int row;
 	@NonNull
 	private int column;
+	
+	public void setValues(int row, int column) {
+		this.row = row;
+		this.column = column;
+	}
 
 }
