@@ -45,7 +45,7 @@ public class UI {
 			int row = Integer.parseInt(st.substring(1));
 			return new ChessPosition(column, row);
 		} catch (RuntimeException e) {
-			throw new InputMismatchException("Erro na leitura da posição do xadrez. Posições Validas: a1 até h8");
+			throw new InputMismatchException("Erro na leitura da posicao do xadrez. Posicoes Validas: a1 até h8");
 		}
 	}
 
@@ -56,6 +56,10 @@ public class UI {
 		System.out.println();
 		System.out.println("Turno: " + chessMatch.getTurn());
 		System.out.println("Aguardando Jogador: " + chessMatch.getCurrentPlayer());
+		
+		if(chessMatch.getCheck()) {
+			System.out.println("CHECK!");
+		}
 	}
 
 	public static void printBoard(ChessPiece[][] pieces) {
