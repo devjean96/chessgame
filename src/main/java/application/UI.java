@@ -45,7 +45,7 @@ public class UI {
 			int row = Integer.parseInt(st.substring(1));
 			return new ChessPosition(column, row);
 		} catch (RuntimeException e) {
-			throw new InputMismatchException("Erro na leitura da posicao do xadrez. Posicoes Validas: a1 até h8");
+			throw new InputMismatchException("Erro na leitura da posicao do xadrez. Posicoes Validas: a1 ate h8");
 		}
 	}
 
